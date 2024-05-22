@@ -1,0 +1,5 @@
+CEP: 88030-460
+Logradouro: Rua Almirante Barroso
+Bairro: João Paulo
+Localidade: Florianópolis
+UF: SC
