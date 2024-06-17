@@ -1,0 +1,10 @@
+{"cotacao": 5.4261}
+{"cotacao": 5.4261}
+
+
+
+{"cotacao": 5.4226}
+{"cotacao": 5.4226}
+{"cotacao": 5.4226}
+{"cotacao": 5.4226}
+{"cotacao": 5.425}
