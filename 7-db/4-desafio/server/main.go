@@ -56,7 +56,7 @@ func getCotacao(w http.ResponseWriter, r *http.Request) {
 
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
-		if err == context.DeadlineExceeded {
+		if errors.Is(err, context.DeadlineExceeded) {
 			fmt.Println("A requisição externa teve tempo excedido.")
 		}
 		w.WriteHeader(http.StatusInternalServerError)
