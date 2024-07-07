@@ -1,7 +1,29 @@
-POST http://localhost:8000/products
-Content-Type: application/json
+POST http://localhost:8000/products HTTP/1.1
 
+Content-Type: application/json
 {
   "name": "Guitarra",
   "price": 2500.00
 }
+
+###
+GET http://localhost:8000/products?limit=1 HTTP/1.1
+Content-Type: application/json
+
+###
+
+GET http://localhost:8000/products/3563c4db-31d0-4afe-8a4a-0f100ec8c5c5 HTTP/1.1
+Content-Type: application/json
+
+###
+PUT http://localhost:8000/products/3563c4db-31d0-4afe-8a4a-0f100ec8c5c5 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Guitarra Atualizada!",
+  "price": 2700.00
+}
+
+###
+DELETE http://localhost:8000/products/3563c4db-31d0-4afe-8a4a-0f100ec8c5c5 HTTP/1.1
+Content-Type: application/json
