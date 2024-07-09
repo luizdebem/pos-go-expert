@@ -4,6 +4,7 @@ package main
 
 import (
 	"10-apis/configs"
+	_ "10-apis/docs"
 	"10-apis/internal/entity"
 	"10-apis/internal/infra/db"
 	"10-apis/internal/infra/webserver/handlers"
@@ -15,8 +16,27 @@ import (
 	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/jwtauth"
+
+	httpSwagger "github.com/swaggo/http-swagger"
 )
 
+// @title Go Expert API Example
+// @version 1.0
+// @description This is a sample server for Go Expert API.
+
+// @contact.name API Support
+// @contact.url http://www.swagger.io/support
+// @contact.email 0JqFP@example.com
+
+// @license.name Apache 2.0
+// @license.url http://www.apache.org/licenses/LICENSE-2.0.html
+
+// @host localhost:8000
+// @BasePath /
+
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name Authorization
 func main() {
 	config, err := configs.LoadConfig(".")
 	if err != nil {
@@ -59,6 +79,8 @@ func main() {
 		r.Post("/", userHandler.CreateUser)
 		r.Post("/generate-token", userHandler.GetJWT)
 	})
+
+	r.Get("/docs/*", httpSwagger.Handler())
 
 	http.ListenAndServe(":8000", r)
 }
