@@ -29,7 +29,7 @@ import (
 var cep = "22431050"
 
 func BrasilAPIRequest() string {
-	println("Iniciando request para BrasilAPI...")
+	println("Iniciando request para BrasilAPI....")
 	req, err := http.Get("https://brasilapi.com.br/api/cep/v1/" + cep)
 	if err != nil {
 		panic(err)
